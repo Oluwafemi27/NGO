@@ -1,0 +1,289 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Veronika Bakoz Charity Foundation design system.
+ * Warm terracotta + deep ink on cream. Editorial serif display + clean sans body.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
+  --color-sand: var(--sand);
+  --color-gold: var(--gold);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: oklch(0.982 0.012 85);
+  --foreground: oklch(0.24 0.028 265);
+  --card: oklch(0.995 0.006 85);
+  --card-foreground: oklch(0.24 0.028 265);
+  --popover: oklch(0.995 0.006 85);
+  --popover-foreground: oklch(0.24 0.028 265);
+  --primary: oklch(0.585 0.155 42);
+  --primary-foreground: oklch(0.99 0.008 85);
+  --secondary: oklch(0.945 0.024 75);
+  --secondary-foreground: oklch(0.3 0.03 50);
+  --muted: oklch(0.951 0.016 80);
+  --muted-foreground: oklch(0.505 0.024 60);
+  --accent: oklch(0.93 0.045 70);
+  --accent-foreground: oklch(0.3 0.05 45);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.99 0.008 85);
+  --border: oklch(0.9 0.018 75);
+  --input: oklch(0.9 0.018 75);
+  --ring: oklch(0.585 0.155 42);
+  --ink: oklch(0.235 0.03 265);
+  --ink-foreground: oklch(0.96 0.014 85);
+  --sand: oklch(0.955 0.022 78);
+  --gold: oklch(0.74 0.12 75);
+  --chart-1: oklch(0.585 0.155 42);
+  --chart-2: oklch(0.74 0.12 75);
+  --chart-3: oklch(0.45 0.06 190);
+  --chart-4: oklch(0.55 0.09 145);
+  --chart-5: oklch(0.36 0.04 265);
+  --sidebar: oklch(0.982 0.012 85);
+  --sidebar-foreground: oklch(0.24 0.028 265);
+  --sidebar-primary: oklch(0.585 0.155 42);
+  --sidebar-primary-foreground: oklch(0.99 0.008 85);
+  --sidebar-accent: oklch(0.93 0.045 70);
+  --sidebar-accent-foreground: oklch(0.3 0.05 45);
+  --sidebar-border: oklch(0.9 0.018 75);
+  --sidebar-ring: oklch(0.585 0.155 42);
+
+  --shadow-soft: 0 18px 50px -24px oklch(0.3 0.06 45 / 0.35);
+  --shadow-lift: 0 26px 60px -26px oklch(0.3 0.06 45 / 0.45);
+  --gradient-warm: linear-gradient(135deg, oklch(0.585 0.155 42), oklch(0.7 0.14 62));
+  --gradient-ink: linear-gradient(
+    180deg,
+    oklch(0.235 0.03 265 / 0.1),
+    oklch(0.235 0.03 265 / 0.78)
+  );
+  --transition-smooth: 400ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.dark {
+  --background: oklch(0.2 0.022 265);
+  --foreground: oklch(0.96 0.014 85);
+  --card: oklch(0.25 0.024 265);
+  --card-foreground: oklch(0.96 0.014 85);
+  --popover: oklch(0.25 0.024 265);
+  --popover-foreground: oklch(0.96 0.014 85);
+  --primary: oklch(0.68 0.15 48);
+  --primary-foreground: oklch(0.2 0.022 265);
+  --secondary: oklch(0.29 0.026 265);
+  --secondary-foreground: oklch(0.96 0.014 85);
+  --muted: oklch(0.29 0.026 265);
+  --muted-foreground: oklch(0.72 0.02 80);
+  --accent: oklch(0.33 0.04 55);
+  --accent-foreground: oklch(0.96 0.014 85);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.68 0.15 48);
+  --ink: oklch(0.16 0.02 265);
+  --ink-foreground: oklch(0.96 0.014 85);
+  --sand: oklch(0.29 0.026 265);
+  --sidebar: oklch(0.25 0.024 265);
+  --sidebar-foreground: oklch(0.96 0.014 85);
+  --sidebar-border: oklch(1 0 0 / 12%);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: var(--color-primary);
+    color: var(--color-primary-foreground);
+  }
+}
+
+@utility container-page {
+  width: 100%;
+  margin-inline: auto;
+  max-width: 80rem;
+  padding-inline: 1.25rem;
+  @media (min-width: 768px) {
+    padding-inline: 2rem;
+  }
+}
+
+@utility eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+@utility reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  &.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@utility page-enter {
+  animation: page-fade 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@utility hover-lift {
+  transition:
+    transform var(--transition-smooth),
+    box-shadow var(--transition-smooth);
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lift);
+  }
+}
+
+@utility link-underline {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 2px;
+    width: 0;
+    background: var(--color-primary);
+    transition: width var(--transition-smooth);
+  }
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+@keyframes page-fade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Slow cinematic pan/zoom for the hero carousel — restarted (replayed) each
+   time a slide becomes active, so the hero feels like a looping video reel
+   rather than a static crossfade. Three variants keep the loop from feeling
+   mechanical when slides repeat. */
+@keyframes kenburns-a {
+  from {
+    transform: scale(1.02) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.16) translate3d(-2.5%, -1.5%, 0);
+  }
+}
+@keyframes kenburns-b {
+  from {
+    transform: scale(1.16) translate3d(2.5%, -1%, 0);
+  }
+  to {
+    transform: scale(1.02) translate3d(0%, 1.5%, 0);
+  }
+}
+@keyframes kenburns-c {
+  from {
+    transform: scale(1.02) translate3d(-1.5%, 1.5%, 0);
+  }
+  to {
+    transform: scale(1.18) translate3d(1.5%, -1%, 0);
+  }
+}
+
+@utility animate-kenburns-a {
+  animation: kenburns-a linear forwards;
+}
+@utility animate-kenburns-b {
+  animation: kenburns-b linear forwards;
+}
+@utility animate-kenburns-c {
+  animation: kenburns-c linear forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
